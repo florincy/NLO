@@ -1,0 +1,128 @@
+[
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "proc",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "proc = subprocess.run([\"./GetShielding2.0.sh\"],\n                      shell=True, capture_output=True)\nres = proc.stdout\nres = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "res = proc.stdout\nres = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "res = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "sres",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "sres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "sres",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "sres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "sres",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "sres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "title",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "title = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "n = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)\n              #print(s)",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "sres",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "sres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)\n              #print(s)\n            except Exception:\n              print(\"lala\")",
+        "detail": "MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "met",
+        "kind": 5,
+        "importPath": "MakeATable",
+        "description": "MakeATable",
+        "peekOfCode": "met = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)\n              #print(s)\n            except Exception:\n              print(\"lala\")\n              #pass # do job to handle: Exception occurred while converting to int",
+        "detail": "MakeATable",
+        "documentation": {}
+    }
+]
