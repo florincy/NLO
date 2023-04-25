@@ -5,20 +5,27 @@ import numpy as np
 import csv
 import re
 import math
+import pathlib
 proc = subprocess.run(["./GetNLO.sh"],
-                      shell=True, capture_output=True)
+                      shell=True, stdout=subprocess.PIPE, universal_newlines=True )
 
 res = proc.stdout
 res = str(res)
+res=res.rstrip()
+
+
+'''
 res = res[1:-1]
-res = res.replace("n/home", "home")
-res = res[1:-1]
-res = res[1:-1]
+res = res.replace("\nhome", "home")
 res = res.replace("/", "//")
-res = res.replace("\home", "//home")
+res = res.replace("//home", "home")
+'''
 print(res)
+
 title = ['Campos e metodos', 'tensor', 'au','esu', 'outra']
 readFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=":")
+
+'''
 readFile.to_csv('Results.csv', index = None)
 with open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:
     reader = csv.reader(inf)
@@ -70,9 +77,8 @@ with open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:
         if AddTot==True:
             writer.writerows([col])
     ouf.close()
-
+'''
 
     
-
 
 
