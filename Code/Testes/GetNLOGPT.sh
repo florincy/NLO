@@ -1,19 +1,16 @@
 #!/bin/bash
 Methods=('B3LYP' 'CAM-B3LYP')
 echo "."
-#echo "Lets Collect your Data?. Works for Shielding"
 directory=$(zenity --title="Select the directory" --file-selection --directory)
-#echo "$directory"
 ResultsPath=$directory/Results.txt
 echo $ResultsPath
+python3 OptimizedChatGPTMTNLO.py $ResultsPath
 for i in ${!Methods[@]}; do
   directory2="${directory}/${Methods[i]}"
   cd ${directory2}
   input=$(find $directory2 -type f -name '*.com')
   inputGAUSSIAN=$(basename -- $input)
   outputGAUSSIAN=$(basename -s .com $input)".log"
-  #echo $inputGAUSSIAN
-  #echo $outputGAUSSIAN
   NlinesEnergy="$(grep -n "Electric dipole moment (input orientation):" ${outputGAUSSIAN} | cut -d : -f 1)"
   NlinesDipoleMoment="$(grep -n "Electric dipole moment (dipole orientation):" ${outputGAUSSIAN} | cut -d : -f 1)"
   N=$(($NlinesDipoleMoment-$NlinesEnergy))
@@ -27,7 +24,6 @@ for i in ${!Methods[@]}; do
     grep -l "Beta(-w;w,0)" -A7 * | xargs grep -w "y " EnergyReference.txt | head -n 1 >> $directory/Results.txt
     grep -l "Beta(-w;w,0)" -A7 * | xargs grep -w "z " EnergyReference.txt | head -n 1 >> $directory/Results.txt
   else
-    #echo "Erro: Campo não requisitado no input" 
     :
   fi
   grep -q "Beta(-2w;w,w)" EnergyReference.txt
@@ -37,7 +33,6 @@ for i in ${!Methods[@]}; do
     grep -l "Beta(-2w;w,w)" -A7 * | xargs grep -w "y " DipoleMomentReference.txt | head -n 1 >> $directory/Results.txt
     grep -l "Beta(-2w;w,w)" -A7 * | xargs grep -w "z " DipoleMomentReference.txt | head -n 1 >> $directory/Results.txt
   else
-    #echo "Erro: Campo não requisitado no input"
     :
   fi
 done 

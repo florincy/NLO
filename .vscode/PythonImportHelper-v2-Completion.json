@@ -63,6 +63,15 @@
         "documentation": {}
     },
     {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -224,11 +233,20 @@
         "documentation": {}
     },
     {
+        "label": "seachAndCreate",
+        "kind": 2,
+        "importPath": "Code.MakeATableForNLO",
+        "description": "Code.MakeATableForNLO",
+        "peekOfCode": "def seachAndCreate(keyword):\n    x=False\n    y=False\n    z=False\n    root=0\n    for row in inf:\n        col=[\"Tot prop\"] \n        row= row.split(\"   \")\n        row = [x for x in row if x != '']\n        row = [x.strip() for x in row if x]",
+        "detail": "Code.MakeATableForNLO",
+        "documentation": {}
+    },
+    {
         "label": "proc",
         "kind": 5,
         "importPath": "Code.MakeATableForNLO",
         "description": "Code.MakeATableForNLO",
-        "peekOfCode": "proc = subprocess.run([\"./GetNLO.sh\"],\n                      shell=True, capture_output=True)\nres = proc.stdout\nres = str(res)\nprint(res)\nres = res[1:-1]\nprint(res)\nres = res.replace(\"n/home\", \"home\")\nres = res[1:-1]\nres = res[1:-1]",
+        "peekOfCode": "proc = subprocess.run([\"./GetNLO.sh\"],\n                      shell=True, stdout=subprocess.PIPE, universal_newlines=True )\nres = proc.stdout\nres = str(res)\nres = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)",
         "detail": "Code.MakeATableForNLO",
         "documentation": {}
     },
@@ -237,7 +255,7 @@
         "kind": 5,
         "importPath": "Code.MakeATableForNLO",
         "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = proc.stdout\nres = str(res)\nprint(res)\nres = res[1:-1]\nprint(res)\nres = res.replace(\"n/home\", \"home\")\nres = res[1:-1]\nres = res[1:-1]\nres = res.replace(\"/\", \"//\")\nres = res.replace(\"\\home\", \"//home\")",
+        "peekOfCode": "res = proc.stdout\nres = str(res)\nres = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)",
         "detail": "Code.MakeATableForNLO",
         "documentation": {}
     },
@@ -246,7 +264,7 @@
         "kind": 5,
         "importPath": "Code.MakeATableForNLO",
         "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = str(res)\nprint(res)\nres = res[1:-1]\nprint(res)\nres = res.replace(\"n/home\", \"home\")\nres = res[1:-1]\nres = res[1:-1]\nres = res.replace(\"/\", \"//\")\nres = res.replace(\"\\home\", \"//home\")\nprint(res)",
+        "peekOfCode": "res = str(res)\nres = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)",
         "detail": "Code.MakeATableForNLO",
         "documentation": {}
     },
@@ -255,7 +273,7 @@
         "kind": 5,
         "importPath": "Code.MakeATableForNLO",
         "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = res[1:-1]\nprint(res)\nres = res.replace(\"n/home\", \"home\")\nres = res[1:-1]\nres = res[1:-1]\nres = res.replace(\"/\", \"//\")\nres = res.replace(\"\\home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")",
+        "peekOfCode": "res = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', ",
         "detail": "Code.MakeATableForNLO",
         "documentation": {}
     },
@@ -264,43 +282,7 @@
         "kind": 5,
         "importPath": "Code.MakeATableForNLO",
         "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = res.replace(\"n/home\", \"home\")\nres = res[1:-1]\nres = res[1:-1]\nres = res.replace(\"/\", \"//\")\nres = res.replace(\"\\home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:",
-        "detail": "Code.MakeATableForNLO",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "Code.MakeATableForNLO",
-        "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = res[1:-1]\nres = res[1:-1]\nres = res.replace(\"/\", \"//\")\nres = res.replace(\"\\home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)",
-        "detail": "Code.MakeATableForNLO",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "Code.MakeATableForNLO",
-        "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = res[1:-1]\nres = res.replace(\"/\", \"//\")\nres = res.replace(\"\\home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)",
-        "detail": "Code.MakeATableForNLO",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "Code.MakeATableForNLO",
-        "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = res.replace(\"/\", \"//\")\nres = res.replace(\"\\home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', ",
-        "detail": "Code.MakeATableForNLO",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "Code.MakeATableForNLO",
-        "description": "Code.MakeATableForNLO",
-        "peekOfCode": "res = res.replace(\"\\home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)",
+        "peekOfCode": "res = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)",
         "detail": "Code.MakeATableForNLO",
         "documentation": {}
     },
@@ -309,7 +291,7 @@
         "kind": 5,
         "importPath": "Code.MakeATableForNLO",
         "description": "Code.MakeATableForNLO",
-        "peekOfCode": "title = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)\n    dw.writeheader()\n    n=0",
+        "peekOfCode": "title = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)\n    dw.writeheader()\n    seachAndCreate(\"Beta(-w,w,0)\")",
         "detail": "Code.MakeATableForNLO",
         "documentation": {}
     },

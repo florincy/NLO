@@ -1,20 +1,20 @@
 [
     {
-        "label": "subprocess",
+        "label": "sys",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "subprocess",
-        "description": "subprocess",
-        "detail": "subprocess",
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
         "documentation": {}
     },
     {
-        "label": "os",
+        "label": "pandas",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
         "documentation": {}
     },
     {
@@ -36,12 +36,30 @@
         "documentation": {}
     },
     {
-        "label": "pandas",
+        "label": "math",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "pandas",
-        "description": "pandas",
-        "detail": "pandas",
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
         "documentation": {}
     },
     {
@@ -54,30 +72,12 @@
         "documentation": {}
     },
     {
-        "label": "math",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "math",
-        "description": "math",
-        "detail": "math",
-        "documentation": {}
-    },
-    {
         "label": "pathlib",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "pathlib",
         "description": "pathlib",
         "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
         "documentation": {}
     },
     {
@@ -143,156 +143,156 @@
         "documentation": {}
     },
     {
-        "label": "proc",
-        "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
-        "peekOfCode": "proc = subprocess.run([\"./GetShielding2.0.sh\"],\n                      shell=True, capture_output=True)\nres = proc.stdout\nres = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)",
-        "detail": "MakeATable",
+        "label": "searchAndCreate",
+        "kind": 2,
+        "importPath": "NLO.MakeATableForNLO",
+        "description": "NLO.MakeATableForNLO",
+        "peekOfCode": "def searchAndCreate(keyword1,keyword2):\n    root=[0.0, 0.0]\n    p=np.array([[False, False, False] ,[False, False, False]], dtype=bool)\n    pv=[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]\n    AddTot=[False, False]\n    for row in inf:\n        col=[\"Tot prop\"] \n        col2=[\"Tot prop\"] \n        row= row.split(\"   \")\n        row = [x for x in row if x != '']",
+        "detail": "NLO.MakeATableForNLO",
         "documentation": {}
     },
     {
-        "label": "res",
+        "label": "ResultsPath",
         "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
-        "peekOfCode": "res = proc.stdout\nres = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)",
-        "detail": "MakeATable",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
-        "peekOfCode": "res = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)",
-        "detail": "MakeATable",
-        "documentation": {}
-    },
-    {
-        "label": "sres",
-        "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
-        "peekOfCode": "sres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):",
-        "detail": "MakeATable",
-        "documentation": {}
-    },
-    {
-        "label": "sres",
-        "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
-        "peekOfCode": "sres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):",
-        "detail": "MakeATable",
-        "documentation": {}
-    },
-    {
-        "label": "sres",
-        "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
-        "peekOfCode": "sres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:",
-        "detail": "MakeATable",
+        "importPath": "NLO.MakeATableForNLO",
+        "description": "NLO.MakeATableForNLO",
+        "peekOfCode": "ResultsPath = sys.argv[1]\nprint(ResultsPath)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(ResultsPath, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    searchAndCreate(\"Beta(-2w,w,w)\", \"Beta(-w,w,0)\")\n    ouf.close()",
+        "detail": "NLO.MakeATableForNLO",
         "documentation": {}
     },
     {
         "label": "title",
         "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
+        "importPath": "NLO.MakeATableForNLO",
+        "description": "NLO.MakeATableForNLO",
+        "peekOfCode": "title = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(ResultsPath, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    searchAndCreate(\"Beta(-2w,w,w)\", \"Beta(-w,w,0)\")\n    ouf.close()",
+        "detail": "NLO.MakeATableForNLO",
+        "documentation": {}
+    },
+    {
+        "label": "proc",
+        "kind": 5,
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
+        "peekOfCode": "proc = subprocess.run([\"./GetShielding2.0.sh\"],\n                      shell=True, capture_output=True)\nres = proc.stdout\nres = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)",
+        "detail": "Testes.MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
+        "peekOfCode": "res = proc.stdout\nres = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)",
+        "detail": "Testes.MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
+        "peekOfCode": "res = str(res)\nprint(res)\nsres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)",
+        "detail": "Testes.MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "sres",
+        "kind": 5,
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
+        "peekOfCode": "sres = res.split(\"\\\\n\")\nsres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):",
+        "detail": "Testes.MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "sres",
+        "kind": 5,
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
+        "peekOfCode": "sres = sres[1:-1]\nsres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):",
+        "detail": "Testes.MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "sres",
+        "kind": 5,
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
+        "peekOfCode": "sres = [i.replace('isotropic =', '') for i in sres]\ntitle = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:",
+        "detail": "Testes.MakeATable",
+        "documentation": {}
+    },
+    {
+        "label": "title",
+        "kind": 5,
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
         "peekOfCode": "title = ['Método', \"Blindagem\"]\nn = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)",
-        "detail": "MakeATable",
+        "detail": "Testes.MakeATable",
         "documentation": {}
     },
     {
         "label": "n",
         "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
         "peekOfCode": "n = int((len(sres))/2)\nprint(n)\nsres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)\n              #print(s)",
-        "detail": "MakeATable",
+        "detail": "Testes.MakeATable",
         "documentation": {}
     },
     {
         "label": "sres",
         "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
         "peekOfCode": "sres = np.array(sres)\nmet = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)\n              #print(s)\n            except Exception:\n              print(\"lala\")",
-        "detail": "MakeATable",
+        "detail": "Testes.MakeATable",
         "documentation": {}
     },
     {
         "label": "met",
         "kind": 5,
-        "importPath": "MakeATable",
-        "description": "MakeATable",
+        "importPath": "Testes.MakeATable",
+        "description": "Testes.MakeATable",
         "peekOfCode": "met = np.split(sres, n)\nfor array in met:\n    for i, row in enumerate(array):\n        for j, value in enumerate(row):\n            try:\n              s = float(row)\n              #print(s)\n            except Exception:\n              print(\"lala\")\n              #pass # do job to handle: Exception occurred while converting to int",
-        "detail": "MakeATable",
+        "detail": "Testes.MakeATable",
         "documentation": {}
     },
     {
-        "label": "searchAndCreate",
+        "label": "calculate_root",
         "kind": 2,
-        "importPath": "MakeATableForNLO",
-        "description": "MakeATableForNLO",
-        "peekOfCode": "def searchAndCreate(keyword1,keyword2):\n    root=[0.0, 0.0]\n    p=np.array([[False, False, False] ,[False, False, False]], dtype=bool)\n    pv=[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]\n    AddTot=[False, False]\n    for row in inf:\n        col=[\"Tot prop\"] \n        col2=[\"Tot prop\"] \n        row= row.split(\"   \")\n        row = [x for x in row if x != '']",
-        "detail": "MakeATableForNLO",
+        "importPath": "Testes.OptimizedChatGPTMTNLO",
+        "description": "Testes.OptimizedChatGPTMTNLO",
+        "peekOfCode": "def calculate_root(prop_values):\n    return math.sqrt(sum(prop_values))\ndef search_and_create(keywords, writer, reader):\n    prop_values = [[False, False, False], [False, False, False]]\n    for i, row in enumerate(reader):\n        row = [x.strip() for x in row]\n        # Check for Tot prop columns\n        for j, prop_value in enumerate(prop_values):\n            if prop_value[2]:\n                prop_value[2] = (float(row[3]) / 3) ** 2",
+        "detail": "Testes.OptimizedChatGPTMTNLO",
         "documentation": {}
     },
     {
-        "label": "proc",
-        "kind": 5,
-        "importPath": "MakeATableForNLO",
-        "description": "MakeATableForNLO",
-        "peekOfCode": "proc = subprocess.run([\"./GetNLO.sh\"],\n                      shell=True, stdout=subprocess.PIPE, universal_newlines=True )\nres = proc.stdout\nres = str(res)\nres = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)",
-        "detail": "MakeATableForNLO",
+        "label": "search_and_create",
+        "kind": 2,
+        "importPath": "Testes.OptimizedChatGPTMTNLO",
+        "description": "Testes.OptimizedChatGPTMTNLO",
+        "peekOfCode": "def search_and_create(keywords, writer, reader):\n    prop_values = [[False, False, False], [False, False, False]]\n    for i, row in enumerate(reader):\n        row = [x.strip() for x in row]\n        # Check for Tot prop columns\n        for j, prop_value in enumerate(prop_values):\n            if prop_value[2]:\n                prop_value[2] = (float(row[3]) / 3) ** 2\n                tot_prop = calculate_root(prop_value)\n                writer.writerow([\"Tot prop\", tot_prop])",
+        "detail": "Testes.OptimizedChatGPTMTNLO",
         "documentation": {}
     },
     {
-        "label": "res",
+        "label": "ResultsPath",
         "kind": 5,
-        "importPath": "MakeATableForNLO",
-        "description": "MakeATableForNLO",
-        "peekOfCode": "res = proc.stdout\nres = str(res)\nres = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)",
-        "detail": "MakeATableForNLO",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "MakeATableForNLO",
-        "description": "MakeATableForNLO",
-        "peekOfCode": "res = str(res)\nres = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)",
-        "detail": "MakeATableForNLO",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "MakeATableForNLO",
-        "description": "MakeATableForNLO",
-        "peekOfCode": "res = res[3:-1]\nres = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', ",
-        "detail": "MakeATableForNLO",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "MakeATableForNLO",
-        "description": "MakeATableForNLO",
-        "peekOfCode": "res = res.replace(\"home\", \"//home\")\nprint(res)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)",
-        "detail": "MakeATableForNLO",
+        "importPath": "Testes.OptimizedChatGPTMTNLO",
+        "description": "Testes.OptimizedChatGPTMTNLO",
+        "peekOfCode": "ResultsPath = sys.argv[1]\nprint(ResultsPath)\ntitle = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(ResultsPath, error_bad_lines=False, header=None, delimiter=\":\", usecols=[0, 1, 2, 3])\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)",
+        "detail": "Testes.OptimizedChatGPTMTNLO",
         "documentation": {}
     },
     {
         "label": "title",
         "kind": 5,
-        "importPath": "MakeATableForNLO",
-        "description": "MakeATableForNLO",
-        "peekOfCode": "title = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(res, error_bad_lines=False, header=None, delimiter=\":\")\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)\n    dw.writeheader()\n    searchAndCreate(\"Beta(-2w,w,w)\", \"Beta(-w,w,0)\")",
-        "detail": "MakeATableForNLO",
+        "importPath": "Testes.OptimizedChatGPTMTNLO",
+        "description": "Testes.OptimizedChatGPTMTNLO",
+        "peekOfCode": "title = ['Campos e metodos', 'tensor', 'au','esu', 'outra']\nreadFile=pd.read_csv(ResultsPath, error_bad_lines=False, header=None, delimiter=\":\", usecols=[0, 1, 2, 3])\nreadFile.to_csv('Results.csv', index = None)\nwith open('Results.csv') as inf, open('Results2.csv', 'w') as ouf:\n    reader = csv.reader(inf)\n    writer = csv.writer(ouf)\n    dw = csv.DictWriter(ouf, delimiter=',', \n                        fieldnames=title)\n    dw.writeheader()\n    keywords=[\"Beta(-2w,w,w)\",\"Beta(-w,w,0)\"]",
+        "detail": "Testes.OptimizedChatGPTMTNLO",
         "documentation": {}
     },
     {
