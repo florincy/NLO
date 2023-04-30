@@ -19,7 +19,7 @@ for i in ${!Methods[@]}; do
   N=$(($NlinesDipoleMoment-$NlinesEnergy))
   grep "Electric dipole moment (input orientation):" ${outputGAUSSIAN} -B1 -A$N > EnergyReference.txt
   grep "Electric dipole moment (dipole orientation):" ${outputGAUSSIAN} -B1 -A$N > DipoleMomentReference.txt
-  echo "${Methods[$i]}:" >> $directory/Results.txt
+  echo "METODO ${Methods[$i]}:" >> $directory/Results.txt
   grep -q "Beta(-w;w,0)" EnergyReference.txt 
   if [ $? -eq 0 ]; then
     echo "Beta(-w,w,0):" >> $directory/Results.txt

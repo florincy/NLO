@@ -1,10 +1,10 @@
 0,1
-B3LYP,
+METODO B3LYP,
 "Beta(-w,w,0)",
 EnergyReference.txt,   x         -0.273498D+01     -0.695163D+01     -0.231881D+02
 EnergyReference.txt,   y         -0.648378D-01     -0.164801D+00     -0.549718D+00
 EnergyReference.txt,   z          0.152644D+01      0.387981D+01      0.129417D+02
-CAM-B3LYP,
+METODO CAM-B3LYP,
 "Beta(-w,w,0)",
 EnergyReference.txt,   x         -0.486201D-01     -0.123580D+00     -0.412218D+00
 EnergyReference.txt,   y          0.104593D+01      0.265849D+01      0.886778D+01
